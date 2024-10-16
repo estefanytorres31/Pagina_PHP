@@ -1,18 +1,13 @@
 <?php
     class Conexion{
-        private $usuario="jysla";
-        private $password="Senati@2024";
-        private $servidor="servidor-bd-jy.mysql.database.azure.com";
+        private $usuario="root";
+        private $password="1234";
+        private $servidor="localhost";
         private $base="bd_ventas_ds502";
-
-        private $opciones=[
-            PDO::MYSQL_ATTR_SSL_CA => "/dev/null",
-            PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => "false"
-        ];
 
         public function Conectar(){
             try{
-                $cnx= new PDO("mysql:host=$this->servidor;dbname=$this->base", $this->usuario, $this->password, $this->opciones);
+                $cnx= new PDO("mysql:host=$this->servidor;dbname=$this->base", $this->usuario, $this->password);
                 $cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 return $cnx;    
             }
@@ -20,4 +15,4 @@
                 echo "Hubo un error: ".$ex->getMessage();
             }
         }
-    }
+    } 

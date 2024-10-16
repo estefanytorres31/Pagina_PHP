@@ -27,7 +27,6 @@ $(function() {
 
 
     $("#frm_consultar_prod #txt_codprod").focusout(function(e){
-        // alert("hola");
         e.preventDefault();
 
         let codprod = $(this).val();
@@ -45,6 +44,10 @@ $(function() {
                         $(".prod").html(rp.producto);
                         $(".stk").html(rp.stock_disponible);
                         $(".cst").html("S/" + rp.costo);
+                        $(".gnc").html("S/"+ rp.ganancia);
+                        $(".prc").html("S/"+ rp.precio);
+                        $(".mar").html(rp.marca);
+                        $(".cat").html(rp.categoria);
                     } else {
                         alert("El codigo " + codprod + "no existe");
 
@@ -55,13 +58,16 @@ $(function() {
                         $(".prod").html(vacio);
                         $(".stk").html(vacio);
                         $(".cst").html(vacio);
-
+                        $(".gnc").html(vacio);
+                        $(".prc").html(vacio);
+                        $(".mar").html(vacio);
+                        $(".cat").html(vacio);
                         $("#txt_codprod").focus();
                     }
                 }
             });
         }
-    });
+});
 
 });
 
