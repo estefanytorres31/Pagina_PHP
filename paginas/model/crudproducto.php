@@ -120,6 +120,7 @@
                 echo "<th>Stock Disponible</th>";
                 echo "<th>Costo</th>";
                 echo "<th>% Ganancia</th>";
+                echo "<th>Precio</th>";
                 echo "<th>Marca</th>";
                 echo "<th>Categoría</th>";
                 echo "</tr>";
@@ -134,6 +135,7 @@
                     echo "<td class='text-center'>".$prod->stock_disponible."</td>";
                     echo "<td>S/.".$prod->costo."</td>";
                     echo "<td class='text-center'>".$prod->ganancia."%</td>";
+                    echo "<td>S/.".$prod->precio."</td>";
                     echo "<td>".$prod->marca."</td>";
                     echo "<td>".$prod->categoria."</td>";
                     echo "</tr>";

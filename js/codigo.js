@@ -28,6 +28,7 @@ $(function() {
 
     $("#frm_consultar_prod #txt_codprod").focusout(function(e){
         e.preventDefault();
+        
 
         let codprod = $(this).val();
 
@@ -69,5 +70,25 @@ $(function() {
         }
 });
 
-});
+        $("#frm_filtrar_prod #btn_filtrar").on("click", function(e){
+            e.preventDefault();
+            console.log("Botón de filtrar clicado");
+            var valor=$("#txt_valor").val();
+            console.log("Valor para filtrar: " + valor);
 
+            if (valor!=""){
+                $.post("../controller/ctr_filtrar_prod.php",
+                    {valor:valor},
+                    function(rpta){
+                        console.log("Respuesta del servidor: ", rpta); 
+                        $("#tabla").html(rpta);
+                    });
+                }else{
+                    $("#tabla").html("");
+                    alert("Escriba un valor para filtrar...");
+                    $("#txt_valor").focus();
+                }
+            });
+        
+
+});

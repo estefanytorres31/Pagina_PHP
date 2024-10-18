@@ -5,7 +5,7 @@
 
     if(isset($_POST["valor"])){
         $valor=$_POST["valor"];
-
+        
         $crudproducto->FiltrarProducto($valor);
 
     }
